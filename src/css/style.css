@@ -1,0 +1,170 @@
+body {
+    background-color: rgb(2, 2, 2);
+}
+
+@font-face {
+    font-family: gtartings;
+    src: url(../assets/fonts/Gtartings.ttf);
+}
+
+@font-face {
+    font-family: dienasty;
+    src: url(../assets/fonts/dienasty.otf);
+}
+
+.fnt1 {
+    font-family: "gtartings";
+    color: white;
+}
+
+.fnt2 {
+    font-family: "dienasty";
+}
+
+.fnt30 {
+    font-size: 60px;
+}
+
+.flex {
+    display:flex;
+}
+
+.pos1 {
+    margin-top: 1%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.divTitle {
+    background-image: url(../src/assets/img/wallG.jpg);
+    background-size: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% -117px;
+    background-attachment: fixed;
+}
+
+.carritoPlace {
+    position: absolute;
+    right: 0;
+}
+
+.carritoIMG {
+    background-image: url(/src/assets/img/carritoICO.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    /* background-position: right center; */
+    width: 250px;
+    height: 280px;
+    margin-right: 2%;
+    top: 7px;
+    right: 0px;
+    margin-right: 0%;
+    position: relative;
+    margin-left: 0%;
+    left: -6px;
+    cursor: pointer;
+}
+
+
+.carritoIMG:hover {
+    background-image: url(/src/assets/img/carritoICO2.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    /* background-position: right center; */
+    width: 250px;
+    height: 280px;
+    margin-right: 2%;
+    top: 7px;
+    right: 0px;
+    margin-right: 0%;
+    position: relative;
+    margin-left: 0%;
+    left: -6px;
+    cursor: pointer;
+}
+
+.testText {
+    color: red;
+}
+
+.divNavPlace {
+    display: flex;
+    border: 6px double #000000;
+    padding-top: 150px;
+    /* margin-right: 0%; */
+    box-shadow: 0 0 6px 4px black;
+    justify-content: center;
+}
+
+.titleH1 {
+    margin-bottom: 15%;
+    color: white;
+    margin-top: 12%;
+    /* margin-right: 22.5%; */
+    font-size: 125px;
+    text-align: center;
+    /* text-shadow: 2px 0px 3px white; */
+    /* text-shadow: -1px 1px 1px white; */
+    /* text-shadow: 1px 1px 1px white; */
+    text-shadow: -9px 12px 0px #000000e8;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+.menuList {
+    border: 5px double rgba(0, 0, 0, 0.667);
+    display: flex;
+    /* background-color: #4c0a0a; */
+    color: white;
+    margin-left: 20%;
+    width: 100%;
+    padding: 14px;
+    margin-top: 7%;
+    gap: 50px;
+    /* padding-left: 10px; */
+    font-size: 30px;
+}
+
+li:hover {
+    /* background-color: antiquewhite; */
+    color: #d55454;
+    text-shadow: -2px 2px 1px black;
+}
+
+.navBar {
+    position: absolute;
+    /* z-index: 0; */
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+ul {
+    background-color: #4c0a0a;
+    height: 38px;
+    /* text-align: left; */
+    margin-left: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 0px;
+}
+
+/*! Slide De Marcas */
+
+.slide-content {
+    background-image: url(../src/assets/img/guitarBannW2.gif);
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: fixed;
+    margin-top: 1%;
+    height: 100%;
+    width: 100%;
+}
