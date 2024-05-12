@@ -262,3 +262,8 @@ ul {
 .guitar-image:hover, .titleH1:hover, .slide-content:hover, .custom-button:hover {
     filter: drop-shadow(0 0 0.75rem crimson);
 }
+
+.carritoParcial {
+    Color: rgb(4, 122, 4);
+    font-size: 23px;
+}

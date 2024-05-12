@@ -10,6 +10,7 @@ const Header = () => {
             </div>
             <Carrito />
             <TituloYBackground />
+            
         </>
     )
 }

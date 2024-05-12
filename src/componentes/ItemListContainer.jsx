@@ -15,7 +15,7 @@ const GuitarSection = ({ id, title, description, guitarImage, price, addToCart }
                 <img className="guitar-image" src={guitarImage} alt={title} />
                 <p style={{ textAlign: 'center', fontSize: '24px' }}>Price: ${price}</p>
             </section>
-            <button className="custom-button" id={`add-to-cart-${id}`} onClick={addToCart}>Add to Cart</button>
+            <button className="custom-button" id={`add-to-cart-${id}`} onClick={() => addToCart(price)}>Add to Cart</button>
         </div>
     );
 };
@@ -31,10 +31,15 @@ GuitarSection.propTypes = {
 
 const ItemListContainer = () => {
     const [cartCount, setCartCount] = useState(0);
+    const [totalPrice, setTotalPrice] = useState(0);
 
-    const addToCart = () => {
+    const addToCart = (price) => {
         setCartCount(cartCount + 1);
+        setTotalPrice(totalPrice + price);
+        console.log(`Has agregado un producto al carrito. Total parcial: $${totalPrice + price}`);
     };
+
+
     return (
         <div style={{ display: 'flex', flexDirection: 'column', flexWrap: 'wrap' }}>
             <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', marginTop: '5%' }}>
