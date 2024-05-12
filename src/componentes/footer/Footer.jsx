@@ -57,7 +57,7 @@ const Footer = () => {
         <div className="footer">
             {showButton && (
                 <button className="scroll-top-button" onClick={scrollToTop}>
-                    Volver Al Inicio
+                    Back To Top
                 </button>
             )}
         </div>

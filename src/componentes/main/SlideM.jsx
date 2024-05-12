@@ -8,5 +8,4 @@ const SlideM = () => {
     );
 }
 
-
 export default SlideM
