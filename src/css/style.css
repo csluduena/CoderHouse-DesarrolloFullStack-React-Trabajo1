@@ -26,7 +26,7 @@ body {
 }
 
 .flex {
-    display:flex;
+    display: flex;
 }
 
 .pos1 {
@@ -85,12 +85,15 @@ body {
 
 /*! CarritoImg.css */
 .carritoPlace {
-    position: fixed; /* Cambiado de absolute a fixed */
-    top: 0; /* Colocar en la esquina superior */
-    right: 0; /* Colocar en la esquina derecha */
+    position: fixed;
+    /* Cambiado de absolute a fixed */
+    top: 0;
+    /* Colocar en la esquina superior */
+    right: 0;
+    /* Colocar en la esquina derecha */
 }
 
-.carritoIMG {
+.carrito {
     background-image: url(/src/assets/img/carritoICO.png);
     background-size: contain;
     background-repeat: no-repeat;
@@ -102,7 +105,7 @@ body {
     cursor: pointer;
 }
 
-.carritoIMG:hover {
+.carrito:hover {
     background-image: url(/src/assets/img/carritoICO2.png);
     /* Estilos de hover */
 }
@@ -182,7 +185,10 @@ ul {
     padding-left: 0px;
 }
 
-.sgBtn, .lpBtn, .stBtn, .fvBtn {
+.sgBtn,
+.lpBtn,
+.stBtn,
+.fvBtn {
     cursor: pointer;
 }
 
@@ -237,4 +243,22 @@ ul {
 
 .guitar-section-container .custom-button {
     margin-top: 10px;
+}
+
+.carritoContador {
+    display:block;
+    font-size: 40px;
+    position: fixed;
+    right: 5.3%;
+    font-family: fantasy;
+    top: 14.5%;
+    color: #ffef00;
+}
+
+.custom-button {
+    cursor: pointer;
+}
+
+.guitar-image:hover, .titleH1:hover, .slide-content:hover, .custom-button:hover {
+    filter: drop-shadow(0 0 0.75rem crimson);
 }
