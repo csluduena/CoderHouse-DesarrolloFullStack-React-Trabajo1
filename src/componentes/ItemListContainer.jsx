@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import Carrito from './main/Carrito/Carrito';
+import ItemListCart from './main/Carrito/ItemListCart';
 
 const GuitarSection = ({ id, title, description, guitarImage, price, addToCart }) => {
     const descriptionParagraphs = description.split('\n').map((line, index) => (
@@ -32,13 +33,24 @@ GuitarSection.propTypes = {
 const ItemListContainer = () => {
     const [cartCount, setCartCount] = useState(0);
     const [totalPrice, setTotalPrice] = useState(0);
+    const [messages, setMessages] = useState([]);
+    const [showItemListCart, setShowItemListCart] = useState(false);
+
 
     const addToCart = (price) => {
         setCartCount(cartCount + 1);
         setTotalPrice(totalPrice + price);
+        const newMessage = `Product Added, Check your Cart - Total: $${totalPrice + price}`;
+        setMessages([...messages, newMessage]);
+        setShowItemListCart(true);
+
+        setTimeout(() => {
+            setMessages([]);
+            setShowItemListCart(false);
+        }, 3000);
+
         console.log(`Has agregado un producto al carrito. Total parcial: $${totalPrice + price}`);
     };
-
 
     return (
         <div style={{ display: 'flex', flexDirection: 'column', flexWrap: 'wrap' }}>
@@ -138,7 +150,9 @@ const ItemListContainer = () => {
                     addToCart={addToCart}
                 />
             </div>
-            <Carrito cartCount={cartCount} />
+            {/* Pasa el mensaje al componente ItemListCart */}
+            {showItemListCart && <ItemListCart greeting={messages} />}
+            <Carrito cartCount={cartCount} totalPrice={totalPrice} />
         </div>
     );
 };

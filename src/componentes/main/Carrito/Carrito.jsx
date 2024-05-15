@@ -17,8 +17,5 @@ Carrito.propTypes = {
     totalPrice: PropTypes.number.isRequired,
 };
 
-Carrito.propTypes = {
-    cartCount: PropTypes.number.isRequired,
-};
-
 export default Carrito;
+

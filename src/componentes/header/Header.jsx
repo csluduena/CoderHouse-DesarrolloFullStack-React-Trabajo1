@@ -1,6 +1,5 @@
 import NavBar from './NavBar'
 import TituloYBackground from './TituloYBackground'
-import Carrito from '../main/Carrito/Carrito'
 
 const Header = () => {
     return (
@@ -8,9 +7,8 @@ const Header = () => {
             <div>
                 <NavBar /> {/*acá citamos al componente NavBar*/}
             </div>
-            <Carrito />
             <TituloYBackground />
-            
+
         </>
     )
 }

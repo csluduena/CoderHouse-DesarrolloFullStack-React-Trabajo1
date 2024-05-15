@@ -3,7 +3,6 @@ import './css/style.css'
 import Header from './componentes/header/Header'
 import SlideM from './componentes/main/SlideM'
 import ItemListContainer from './componentes/ItemListContainer'
-import Carrito from './componentes/main/Carrito/Carrito';
 import Footer from './componentes/footer/Footer'
 
 // App.jsx
@@ -24,7 +23,6 @@ function App() {
         <>
             <Header cartCount={cartCount} totalPrice={totalPrice} />
             <SlideM />
-            <Carrito totalPrice={totalPrice} />
             <ItemListContainer addToCart={addToCart} />
             <Footer />
         </>
