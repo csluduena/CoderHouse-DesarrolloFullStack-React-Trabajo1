@@ -15,8 +15,8 @@ const GuitarSection = ({ id, title, description, guitarImage, price, addToCart }
                 {descriptionParagraphs}
                 <img className="guitar-image" src={guitarImage} alt={title} />
                 <p style={{ textAlign: 'center', fontSize: '24px' }}>Price: ${price}</p>
+                <button className="custom-button" id={`add-to-cart-${id}`} onClick={() => addToCart(price)}>Add to Cart</button>
             </section>
-            <button className="custom-button" id={`add-to-cart-${id}`} onClick={() => addToCart(price)}>Add to Cart</button>
         </div>
     );
 };
@@ -35,21 +35,32 @@ const ItemListContainer = () => {
     const [totalPrice, setTotalPrice] = useState(0);
     const [messages, setMessages] = useState([]);
     const [showItemListCart, setShowItemListCart] = useState(false);
-
+    const [timerRef, setTimerRef] = useState(null);
 
     const addToCart = (price) => {
-        setCartCount(cartCount + 1);
-        setTotalPrice(totalPrice + price);
-        const newMessage = `Product Added, Check your Cart - Total: $${totalPrice + price}`;
-        setMessages([...messages, newMessage]);
-        setShowItemListCart(true);
+        if (cartCount >= 6) {
+            const newMessage = "You have reached the online purchase limit, please proceed to checkout";
+            setMessages([newMessage]);
+            setShowItemListCart(true);
+        } else {
+            setCartCount(cartCount + 1);
+            setTotalPrice(totalPrice + price);
+            const newMessage = `Product Added, Check your Cart - Total: $${totalPrice + price}`;
+            setMessages([newMessage, ...messages]);
+            setShowItemListCart(true);
 
-        setTimeout(() => {
-            setMessages([]);
-            setShowItemListCart(false);
-        }, 3000);
+            if (timerRef) {
+                clearTimeout(timerRef);
+            }
+            const timer = setTimeout(() => {
+                setMessages([]);
+                setShowItemListCart(false);
+            }, 3000);
+            setTimerRef(timer);
 
-        console.log(`Has agregado un producto al carrito. Total parcial: $${totalPrice + price}`);
+
+            console.log(`Has agregado un producto al carrito. Total parcial: $${totalPrice + price}`);
+        }
     };
 
     return (

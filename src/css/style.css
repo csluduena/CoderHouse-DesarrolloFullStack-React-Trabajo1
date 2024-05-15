@@ -134,14 +134,19 @@ li:hover {
     align-items: center;
 }
 
-ul {
+.menuList {
     background-color: #4c0a0a;
-    height: 38px;
-    /* text-align: left; */
-    margin-left: 0;
+    height: 34px;
+    width: 118%;
+    text-align: center;
+    margin-left: 40%;
     display: flex;
-    align-items: center;
     padding-left: 0px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .sgBtn,
